@@ -3,46 +3,7 @@
 
 using namespace std;
 
-string ifDigitCharInNumber(int char1, int number) {
-
-	auto char1Str = to_string(char1);
-	auto numberStr = to_string(number);
-
-	char1 = stoi(char1Str);
-	number = stoi(numberStr);
-
-	bool response(false);
-	int temp = number;
-	int digits(1);
-	
-	do {
-
-		if (number % 10 == char1||number%10==char1*-1) {
-
-			response = true;
-
-			break;
-
-		}
-
-		number /= 10;
-
-	} while (number != 0);
-
-	if (response) {
-
-		return "true";
-
-	}
-
-	else {
-
-		return "false";
-
-	}
-
-} 
-
+string ifDigitCharInNumber(int& char1, int& number);
 
 int main() {
 
@@ -95,5 +56,45 @@ int main() {
 
 	system("pause");
 	return 0;
+
+}
+
+string ifDigitCharInNumber(int& char1, int& number) {
+
+	auto char1Str = to_string(char1);
+	auto numberStr = to_string(number);
+
+	char1 = stoi(char1Str);
+	number = stoi(numberStr);
+
+	bool response(false);
+	int temp = number;
+	int digits(1);
+
+	do {
+
+		if (number % 10 == char1 || number % 10 == char1 * -1) {
+
+			response = true;
+
+			break;
+
+		}
+
+		number /= 10;
+
+	} while (number != 0);
+
+	if (response) {
+
+		return "true";
+
+	}
+
+	else {
+
+		return "false";
+
+	}
 
 }
